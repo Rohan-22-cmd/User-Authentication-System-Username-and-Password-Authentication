@@ -1,0 +1,33 @@
+<!-- templates/authentication/login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <h2>Login to Your Account</h2>
+
+    <!-- Login Form -->
+    <form method="POST">
+        {% csrf_token %}
+        
+        <!-- Input for Username -->
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" required><br><br>
+
+        <!-- Input for Password -->
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required><br><br>
+
+        <!-- Submit Button -->
+        <button type="submit">Login</button>
+    </form>
+
+    <!-- Forgot Password Button -->
+    <div>
+        <a href="{% url 'password_reset' %}">Forgot your password?</a>
+    </div>
+</body>
+</html>
